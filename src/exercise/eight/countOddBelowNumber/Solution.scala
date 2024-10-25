@@ -3,7 +3,9 @@ package exercise.eight.countOddBelowNumber
 object Solution {
     val inputAndOutput =
         Map(15 -> 7,
-            7 -> 3)
+            7 -> 3,
+            16 -> 8,
+            0 -> 0)
 
     def main(args: Array[String]): Unit = {
         val results = inputAndOutput.map { case (input, expected) =>
@@ -16,10 +18,7 @@ object Solution {
 
 
 object SolutionGetrol {
-    def solute(number: Int): Int = {
-       0
-    }
-
+    def solute(number: Int): Int = number / 2
 }
 
 object SolutionAtlxdub {
