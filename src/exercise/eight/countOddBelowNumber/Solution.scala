@@ -1,7 +1,5 @@
 package exercise.eight.countOddBelowNumber
 
-import scala.annotation.tailrec
-
 object Solution {
     val inputAndOutput =
         Map(15 -> 7,
@@ -27,7 +25,6 @@ object SolutionGetrol {
 object SolutionAtlxdub {
     def solute(num: Int = 0): Int = {
         var res = 0
-        @tailrec
         def loop(count: Int): Int = {
             var number = count
             if (number > 0) {
