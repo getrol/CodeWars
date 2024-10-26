@@ -29,22 +29,14 @@ object SolutionGetrol {
 
 object SolutionAtlxdub {
     def solute(num: Int = 0): Int = {
-        var res = 0
-        def loop(count: Int): Int = {
-            var number = count
-            if (number > 0) {
-                if (count % 2 == 0) {
-                    number -= 1
-                    loop(number)
-                }
-                else {
-                    res += 1
-                    number -= 1
-                    loop(number)
-                }
-            }
+        def loop(count: Int, res: Int): Int = {
+            if (count > 0)
+                if (count % 2 == 0)
+                    loop(count - 1, res)
+                else
+                    loop(count - 1, res + 1)
             else res-1
         }
-        loop(num)
+        loop(num, 0)
     }
 }

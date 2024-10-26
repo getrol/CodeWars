@@ -10,7 +10,7 @@ object Solution {
 
     def main(args: Array[String]): Unit = {
         val results = wordsAndSolutions.map { case (word, expected) =>
-            val ourSolution = SolutionGetrol.solute(word)
+            val ourSolution = SolutionAtlxdub.solute(word)
             s"Solution is: ${ourSolution == expected}. Our solution was: \"$ourSolution\". Expected solution is: \"$expected\""
         }
         results.map(println)
@@ -26,5 +26,8 @@ object SolutionGetrol {
 }
 
 object SolutionAtlxdub {
-    def solute(word: String): String = ???
+    def solute(word: String): Unit = {
+
+
+    }
 }
