@@ -1,33 +1,37 @@
 package exercise.six.breakCamelCase
 
-
-object Solution {
-    val wordsAndSolutions =
-        Map("helloWorld" -> "hello World",
-            "camelCase" -> "camel Case",
-            "breakCamelCase" -> "break Camel Case"
-        )
-
-    def main(args: Array[String]): Unit = {
-        val results = wordsAndSolutions.map { case (word, expected) =>
-            val ourSolution = SolutionAtlxdub.solute(word)
-            s"Solution is: ${ourSolution == expected}. Our solution was: \"$ourSolution\". Expected solution is: \"$expected\""
-        }
-        results.map(println)
-    }
-}
+import general.AbstractSolution
 
 
-object SolutionGetrol {
-    def solute(word: String): String = {
-        word.toUpperCase()
-    }
+object Solution extends AbstractSolution[String, String] {
+  override val inputAndOutput: Map[String, String] = Map(
+    "helloWorld" -> "hello World",
+    "camelCase" -> "camel Case",
+    "breakCamelCase" -> "break Camel Case",
+    "StartWithUpper" -> "Start With Upper",
+    "have spaceInCenter" -> "have space In Center",
+    "upperDIRECTLYInWord" -> "upper DIRECTLY In Word",
+    "" -> "",
+    "one" -> "one"
+  )
 
-}
+  override def getrolSolute(input: String): String = {
+    val regularExpression1 = "[a-z][A-Z]".r
+    val regularExpression2 = "[A-Z][A-Z][a-z]".r
 
-object SolutionAtlxdub {
-    def solute(word: String): Unit = {
 
+    val innerResult = regularExpression1.replaceAllIn(input, iterator => {
+      val letters = iterator.toString()
+      letters.slice(0, 1) + " " + letters.slice(1, 2)
+    })
 
-    }
+    val outResult = regularExpression2.replaceAllIn(innerResult, iterator => {
+      val letters = iterator.toString()
+      letters.slice(0, 1) + " " + letters.slice(1, 3)
+    })
+    outResult
+  }
+
+  override def atlxSolute(input: String): String = ""
+
 }
