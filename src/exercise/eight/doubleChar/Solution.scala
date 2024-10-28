@@ -1,4 +1,4 @@
-package exercise.eight.banjoPlay
+package exercise.eight.doubleChar
 
 import general.AbstractSolution
 
