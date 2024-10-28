@@ -15,14 +15,16 @@ object Solution extends AbstractSolution[BigInt, BigInt] {
 
   override def atlxSolute(input: BigInt): BigInt = {
     def loop(count: BigInt, res: BigInt): BigInt = {
-      if (count > 0)
+      if (count  > 0)
         if (count % 2 == 0)
           loop(count - 1, res)
         else
           loop(count - 1, res + 1)
-      else res - 1
+      else res
     }
 
-    loop(input, 0)
+    if (input % 2 == 0 )
+      loop (input, 0)
+      else loop (input - 1, 0)
   }
 }
