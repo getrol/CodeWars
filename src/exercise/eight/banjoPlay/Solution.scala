@@ -11,7 +11,12 @@ object Solution extends AbstractSolution [String, String]{
     "rolf" -> "rolf plays banjo"
   )
 
-  override def getrolSolute(input: String): String = "???"
+  override def getrolSolute(input: String): String = {
+    input.headOption match {
+      case Some(firstChar) if firstChar.toLower == 'r' => s"$input plays banjo"
+      case _ => s"$input does not play banjo"
+    }
+  }
 
   override def atlxSolute(input: String): String ={
     var suove = (input.charAt(0) == 'r' || input.charAt(0) == 'R')

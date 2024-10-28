@@ -20,9 +20,10 @@ trait AbstractSolution[T, R] {
       (ourSolution == expected, input, ourSolution, expected, finishTime - startTime)
 
     }
-
+    val timeSum = testResults.foldLeft(0L){case (acc, (_, _, _, _, time)) => acc + time}
     val result = headString +
       s"Successfully passed tests - ${testResults.count(_._1)}/${testResults.size}\n" +
+        s"Time was spent: $timeSum milliseconds\n" +
       testResults.zipWithIndex.map { case ((isSuccess, input, ourSolution, expected, time), index) =>
         s""" Solution ${index + 1}: ${isSuccess.toString.toUpperCase()}
            | Input value: "$input".
