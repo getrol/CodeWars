@@ -32,6 +32,7 @@ object Solution extends AbstractSolution[String, String] {
     outResult
   }
 
-  override def atlxSolute(input: String): String = ""
-
+  override def atlxSolute(input: String): String = {
+  "tilted"
+  }
 }
