@@ -12,14 +12,12 @@ object Solution extends AbstractSolution [String, String]{
     "1337" -> "11333377",
     "illuminati" -> "iilllluummiinnaattii",
     "123456" -> "112233445566",
-    "%^&*(" -> "%%^^&&**(("
+    "%^&*(" -> "%%^^&&**((",
+    "" -> ""
   )
 
   override def getrolSolute(input: String): String = {
-    input.headOption match {
-      case Some(firstChar) if firstChar.toLower == 'r' => s"$input plays banjo"
-      case _ => s"$input does not play banjo"
-    }
+    input.foldLeft(""){case (acc, ch) => acc :+ ch :+ ch}
   }
 
   override def atlxSolute(input: String): String ={
