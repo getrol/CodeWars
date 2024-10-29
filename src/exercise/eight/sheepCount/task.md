@@ -13,3 +13,5 @@ false, false, true,  true)`
 The correct answer would be `17`.
 
 Hint: Don't forget to check for bad values like `null`/`undefined`
+
+https://www.codewars.com/kata/54edbc7200b811e956000556/train/scala
