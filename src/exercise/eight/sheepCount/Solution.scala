@@ -20,5 +20,8 @@ object Solution extends AbstractSolution [Array[Boolean], Int] {
 
   override def getrolSolute(input: Array[Boolean]): Int = 0
 
-  override def atlxSolute(input: Array[Boolean]): Int = 3
+  override def atlxSolute(input: Array[Boolean]): Int = {
+    val res = for (i <- input if i == true) yield i
+    res.size
+  }
 }
