@@ -4,12 +4,15 @@ import general.AbstractSolution
 
 object Solution extends AbstractSolution [String, String]{
   val inputAndOutput: Map[String, String] = Map (
-    "Adam" -> "Adam does not play banjo",
-    "Paul" -> "Paul does not play banjo",
-    "Ringo" -> "Ringo plays banjo",
-    "bravo" -> "bravo does not play banjo",
-    "rolf" -> "rolf plays banjo",
-    "" -> " does not play banjo"
+    "String" -> "SSttrriinngg",
+    "Hello World" -> "HHeelllloo  WWoorrlldd",
+    "1234!_ " -> "11223344!!__  ",
+    "abcd" -> "aabbccdd",
+    "Adidas" -> "AAddiiddaass",
+    "1337" -> "11333377",
+    "illuminati" -> "iilllluummiinnaattii",
+    "123456" -> "112233445566",
+    "%^&*(" -> "%%^^&&**(("
   )
 
   override def getrolSolute(input: String): String = {
@@ -20,11 +23,6 @@ object Solution extends AbstractSolution [String, String]{
   }
 
   override def atlxSolute(input: String): String ={
-    var suove = (input.charAt(0) == 'r' || input.charAt(0) == 'R')
-    if (suove == true)
-      s"$input plays banjo"
-    else
-      s"$input does not play banjo"
+    input.flatMap(i => s"$i$i")
   }
-
 }
