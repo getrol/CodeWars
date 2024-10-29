@@ -24,6 +24,17 @@ object Solution extends AbstractSolution [(Int, Double), String]{
   }
 
   override def atlxSolute(input: (Int, Double)): String ={
-    ""
+    def bmi(weight: Int, height: Double): String = {
+      val bmi = weight / Math.pow(height, 2)
+      val res = bmi match {
+        case bmi if bmi <= 18.5 => "Underweight"
+        case bmi if bmi <= 25.0 => "Normal"
+        case bmi if bmi <= 30.0 => "Overweight"
+        case bmi if bmi > 30 => "Obese"
+        case _ => "miss output, Check your input parameters"
+      }
+      res
+    }
+    bmi(input._1, input._2)
   }
 }
