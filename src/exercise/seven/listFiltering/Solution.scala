@@ -11,7 +11,9 @@ object Solution extends AbstractSolution [List[Any], List[Int]]{
     List(1, 2, 3) -> List(1, 2, 3)
   )
 
-  override def getrolSolute(input: List[Any]): List[Int] = List()
+  override def getrolSolute(input: List[Any]): List[Int] = {
+    input.filter(_.isInstanceOf[Int]).asInstanceOf[List[Int]]
+  }
 
     override def atlxSolute(input: List[Any]): List[Int] = {
       val res = for (i <- input if i.getClass.getName == "java.lang.Integer") yield i
