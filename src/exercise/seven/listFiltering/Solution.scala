@@ -14,7 +14,7 @@ object Solution extends AbstractSolution [List[Any], List[Int]]{
   override def getrolSolute(input: List[Any]): List[Int] = List()
 
     override def atlxSolute(input: List[Any]): List[Int] = {
-      val res = for (i <- input if i == Int) yield i
+      val res = for (i <- input if i.getClass.getName == "java.lang.Integer") yield i
       res.map(_ .toString.toInt)
     }
   }
