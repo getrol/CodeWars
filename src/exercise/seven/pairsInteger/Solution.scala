@@ -17,6 +17,15 @@ object Solution extends AbstractSolution [Seq[Int], Seq[(Int, Int)]] {
         result
     }
 
-    override def atlxSolute(input: Seq[Int]): Seq[(Int, Int)] = Nil
-
+    override def atlxSolute(input: Seq[Int]): Seq[(Int, Int)] = {
+        val n = input(0)
+        val m = input(1)
+        val nums = n to m
+        val res = for {i <- nums
+            t <- nums
+            if i <= t
+        }
+            yield (i, t)
+        res
+    }
 }
