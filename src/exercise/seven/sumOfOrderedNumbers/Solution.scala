@@ -27,5 +27,28 @@ object Solution extends AbstractSolution[(Int, Int), String] {
         }
     }
 
-    override def atlxSolute(input: (Int, Int)): String = ""
+    override def atlxSolute(input: (Int, Int)): String = {
+        val a = input._1
+        val b = input._2
+        val answer = if (a == b)
+            s"$a ($a since both are same)"
+        else {
+            val seq = input match {
+                case seq if (a > b) => (b to a).reverse
+                case seq2 if (b > a) => (a to b)
+            }
+            val sum = seq.sum
+
+            val res = for (i <- seq) yield {
+                if (seq.head == i)
+                    s"$i"
+                else if (i >= 0)
+                    s" + $i"
+                else
+                    s" - ${i.abs}"
+            }
+            s"$sum (${res.mkString} = $sum)"
+        }
+        answer
+        }
 }
