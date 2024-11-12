@@ -1,7 +1,5 @@
 package general
 
-import java.time.Instant
-
 trait AbstractSolution[T, R] {
 
   val inputAndOutput: Map[T, R]
