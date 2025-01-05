@@ -17,6 +17,10 @@ object Solution extends AbstractSolution[String, String] {
   }
 
   override def atlxSolute(input: String): String = {
-    ""
+    val indexedSeq = input.split("\\D").mkString.toList
+    val words = input.split("\\s")
+    val test = (indexedSeq zip words).toMap
+    val res = test.toSeq.sortBy(_._1)
+    res.map(_._2 + " ").mkString.strip()
   }
 }
