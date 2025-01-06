@@ -27,6 +27,7 @@ object Solution extends AbstractSolution[(Int, Int), String] {
         }
     }
 
+    //noinspection ScalaUnnecessaryParentheses
     override def atlxSolute(input: (Int, Int)): String = {
         val a = input._1
         val b = input._2
@@ -34,8 +35,8 @@ object Solution extends AbstractSolution[(Int, Int), String] {
             s"$a ($a since both are same)"
         else {
             val seq = input match {
-                case seq if (a > b) => (b to a).reverse
-                case seq2 if (b > a) => (a to b)
+                case _ if (a > b) => (b to a).reverse
+                case _ if (b > a) => (a to b)
             }
             val sum = seq.sum
 

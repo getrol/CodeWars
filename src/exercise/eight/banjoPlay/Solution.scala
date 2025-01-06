@@ -20,8 +20,8 @@ object Solution extends AbstractSolution [String, String]{
   }
 
   override def atlxSolute(input: String): String ={
-    var suove = (input.charAt(0) == 'r' || input.charAt(0) == 'R')
-    if (suove == true)
+    val suove = input.charAt(0) == 'r' || input.charAt(0) == 'R'
+    if (suove)
       s"$input plays banjo"
     else
       s"$input does not play banjo"
