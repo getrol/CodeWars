@@ -22,7 +22,17 @@ object Solution extends AbstractSolution[(Seq[Int], Seq[Int]), Boolean] {
     }
 
     override def atlxSolute(input: (Seq[Int], Seq[Int])): Boolean = {
-        true
+        val m1 = input._1
+        val m2 = input._2.map(x => math.sqrt(x))
+
+        val res = for {
+            n <- m2
+            j <- m1
+            if j == n
+        }
+        yield n
+
+        res.size / 2 == m2.size
     }
 
 
