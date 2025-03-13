@@ -25,8 +25,8 @@ object Solution extends AbstractSolution[String, String] {
             input.patch(out, " ", 0)
         }*/
         val res = input.toArray
-        val out = for (i <- res) yield s"$i$i"
+        val out2 = res.map(n => n + "" + n)
 
-        out.mkString
+        out2.mkString
     }
 }
