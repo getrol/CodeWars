@@ -14,6 +14,19 @@ object Solution extends AbstractSolution[String, String] {
     override def getrolSolute(input: String): String = (for (i <- input) yield s"$i$i").mkString("")
 
     override def atlxSolute(input: String): String = {
-        ""
+        /*
+        val res = input.toArray
+
+        val res2 = for (n <- res if n.isUpper) yield res.indexOf(n)
+        if (res2.isEmpty)
+            input
+        else {
+            val out = res2.mkString.toInt
+            input.patch(out, " ", 0)
+        }*/
+        val res = input.toArray
+        val out = for (i <- res) yield s"$i$i"
+
+        out.mkString
     }
 }
