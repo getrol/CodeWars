@@ -22,7 +22,7 @@ object Solution extends AbstractSolution[String, List[String]] {
       val newInput = input + "_"
       splitStrAtlx(newInput)
     }
-    else if (input.isEmpty) List("") else{
+    else {
       splitStrAtlx(input)
     }
   }
