@@ -3,6 +3,7 @@ package exercise.six.splitStrings
 import general.AbstractSolution
 
 
+
 object Solution extends AbstractSolution[String, List[String]] {
   val inputAndOutput: Map[String, List[String]] = Map(
     "asdfadsf" -> List("as", "df", "ad", "sf"),
