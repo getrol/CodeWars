@@ -8,8 +8,10 @@ trait AbstractSolution[T, R] {
 
   def atlxSolute(input: T): R
 
-  private def collectResult(name: String, solution: T => R): String = {
 
+  protected def initialize = println(this.inputAndOutput.toString())
+
+  private def collectResult(name: String, solution: T => R): String = {
     val headString = s"*********$name solutions*********\n"
     val testResults = inputAndOutput.map { case (input, expected) =>
       val startTime = System.currentTimeMillis()
@@ -34,6 +36,7 @@ trait AbstractSolution[T, R] {
 
 
   def main(args: Array[String]): Unit = {
+    initialize
     val getrolResults = collectResult("Getrol", getrolSolute)
     val atlxResults = collectResult("Atlxdub", atlxSolute)
 
