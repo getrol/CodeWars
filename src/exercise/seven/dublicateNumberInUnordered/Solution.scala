@@ -15,5 +15,10 @@ object Solution extends AbstractSolution[Seq[Int], Int] {
     input.diff(input.distinct).head
   }
 
-  override def atlxSolute(input: Seq[Int]): Int = 0
+  override def atlxSolute(input: Seq[Int]): Int = {
+    val res = input.sorted
+    val out = for (n <- res if n != res.indexOf(n)) yield n
+    out.last
+    //я конченый бегите
+  }
 }
