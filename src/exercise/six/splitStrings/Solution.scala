@@ -3,6 +3,7 @@ package exercise.six.splitStrings
 import general.AbstractSolution
 
 
+
 object Solution extends AbstractSolution[String, List[String]] {
   val inputAndOutput: Map[String, List[String]] = Map(
     "asdfadsf" -> List("as", "df", "ad", "sf"),
@@ -16,6 +17,18 @@ object Solution extends AbstractSolution[String, List[String]] {
   }
 
   override def atlxSolute(input: String): List[String] = {
-    List("")
+    if (input.length % 2 != 0) {
+      val newInput = input + "_"
+      splitStrAtlx(newInput)
+    }
+    else if (input.isEmpty) List("") else{
+      splitStrAtlx(input)
+    }
+  }
+
+  def splitStrAtlx(input: String, str: List[String] = List()): List[String] = {
+    if (input.isEmpty) str else {
+      splitStrAtlx(input.substring(2), str.appended(input.take(2)))
+    }
   }
 }
